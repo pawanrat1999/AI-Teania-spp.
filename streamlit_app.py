@@ -22,7 +22,7 @@ def get_detection_folder():
 
 if __name__ == '__main__':
 
-    st.title('ปัญญาประดิษฐ์วินิจฉัยพยาธิตัวคืด')
+    st.title('ปัญญาประดิษฐ์วินิจฉัยพยาธิตัวตืด')
     st.subheader('develop by https://kasira.biz')
 
     parser = argparse.ArgumentParser()
