@@ -22,7 +22,7 @@ def get_detection_folder():
 
 if __name__ == '__main__':
 
-    st.title('ปัญญาประดิษฐ์วินิจฉัยพยาธิตัวตืด')
+    st.title('ปัญญาประดิษฐ์วินิจฉัยไข่พยาธิตัวตืด')
     st.subheader('develop by https://kasira.biz')
 
     parser = argparse.ArgumentParser()
@@ -74,7 +74,7 @@ if __name__ == '__main__':
 
     if is_valid:
         print('valid')
-        if st.button('ทำการตรวจหาพยาธิตัวตืด'):
+        if st.button('ทำการตรวจหาไข่พยาธิตัวตืด'):
 
             detect(opt)
 
