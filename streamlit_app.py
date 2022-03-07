@@ -74,7 +74,7 @@ if __name__ == '__main__':
 
     if is_valid:
         print('valid')
-        if st.button('ตรวจหาพยาธิตัวตืด'):
+        if st.button('ทำการตรวจหาพยาธิตัวตืด'):
 
             detect(opt)
 
