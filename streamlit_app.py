@@ -46,14 +46,14 @@ if __name__ == '__main__':
     opt = parser.parse_args()
     print(opt)
 
-    source = ("Image", "Video")
-    source_index = st.sidebar.selectbox("SELECT", range(len(source)), format_func=lambda x: source[x])
+    source = ("รูปภาพ", "ภาพเคลื่อนไหว")
+    source_index = st.sidebar.selectbox("กรุณาเลือก", range(len(source)), format_func=lambda x: source[x])
 
     if source_index == 0:
-        uploaded_file = st.sidebar.file_uploader("Image", type=['png', 'jpeg', 'jpg'])
+        uploaded_file = st.sidebar.file_uploader("รูปภาพ", type=['png', 'jpeg', 'jpg'])
         if uploaded_file is not None:
             is_valid = True
-            with st.spinner(text='In progress...'):
+            with st.spinner(text='กำลังดำเนินการ...'):
                 st.sidebar.image(uploaded_file)
                 picture = Image.open(uploaded_file)
                 picture = picture.save(f'data/images/{uploaded_file.name}')
@@ -61,10 +61,10 @@ if __name__ == '__main__':
         else:
             is_valid = False
     else:
-        uploaded_file = st.sidebar.file_uploader("Video", type=['mp4'])
+        uploaded_file = st.sidebar.file_uploader("ภาพเคลื่อนไหว", type=['mp4'])
         if uploaded_file is not None:
             is_valid = True
-            with st.spinner(text='In progress...'):
+            with st.spinner(text='กำลังดำเนินการ...'):
                 st.sidebar.video(uploaded_file)
                 with open(os.path.join("data", "videos", uploaded_file.name), "wb") as f:
                     f.write(uploaded_file.getbuffer())
@@ -74,7 +74,7 @@ if __name__ == '__main__':
 
     if is_valid:
         print('valid')
-        if st.button('Predict'):
+        if st.button('ตรวจหาพยาธิตัวตืด'):
 
             detect(opt)
 
